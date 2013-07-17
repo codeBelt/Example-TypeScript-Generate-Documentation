@@ -12,6 +12,7 @@ module.exports = function(grunt) {
         BASE_PATH: '../',
         DEVELOPMENT_PATH: '../dev/',
 
+        // The YUIDoc plugin to generate documentation for code files.
         yuidoc: {
             compile: {
                 name: '<%= pkg.name %>',
@@ -19,7 +20,7 @@ module.exports = function(grunt) {
                 version: '<%= pkg.version %>',
                 url: '<%= pkg.homepage %>',
                 options: {
-                    extension: '.ts',
+                    extension: '.ts',                               // Default '.js' <comma-separated list of file extensions>
                     paths: '<%= DEVELOPMENT_PATH %>' + 'scripts/',
                     outdir: '<%= BASE_PATH %>' + 'docs/'
                 }
@@ -27,7 +28,6 @@ module.exports = function(grunt) {
         }
 
     });
-
 
     // These plugins provide necessary tasks.
     grunt.loadNpmTasks('grunt-contrib-yuidoc');
