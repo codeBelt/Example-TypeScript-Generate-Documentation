@@ -1,2 +1,2 @@
-Example-TypeScript-Generate-Documentation
+Example TypeScript Generate Documentation
 =========================================

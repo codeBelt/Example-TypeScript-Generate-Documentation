@@ -1,0 +1,836 @@
+{
+    "project": {
+        "name": "TypeScript-Generate-Documentation",
+        "description": "This is an example how to create documentation from TypeScript files",
+        "version": "0.1.0",
+        "url": ""
+    },
+    "files": {
+        "..\\dev\\scripts\\display\\DisplayObject.ts": {
+            "name": "..\\dev\\scripts\\display\\DisplayObject.ts",
+            "modules": {},
+            "classes": {
+                "DisplayObject": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "..\\dev\\scripts\\events\\BaseEvent.ts": {
+            "name": "..\\dev\\scripts\\events\\BaseEvent.ts",
+            "modules": {},
+            "classes": {
+                "BaseEvent": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "..\\dev\\scripts\\events\\EventDispatcher.ts": {
+            "name": "..\\dev\\scripts\\events\\EventDispatcher.ts",
+            "modules": {},
+            "classes": {
+                "EventDispatcher": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        }
+    },
+    "modules": {},
+    "classes": {
+        "DisplayObject": {
+            "name": "DisplayObject",
+            "shortname": "DisplayObject",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "..\\dev\\scripts\\display\\DisplayObject.ts",
+            "line": 3,
+            "description": "The {{#crossLink \"DisplayObject\"}}{{/crossLink}} class is the base class for all objects that can be placed on the display list.",
+            "extends": "EventDispatcher",
+            "is_constructor": 1
+        },
+        "BaseEvent": {
+            "name": "BaseEvent",
+            "shortname": "BaseEvent",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "..\\dev\\scripts\\events\\BaseEvent.ts",
+            "line": 3,
+            "description": "<p>The {{#crossLink \"BaseEvent\"}}{{/crossLink}} class is used as the base class for the creation of Event objects, which are passed as parameters to event listeners when an event occurs.</p>\n\n<p>The properties of the {{#crossLink \"BaseEvent\"}}{{/crossLink}} class carry basic information about an event, such as the event's type or whether the event's default behavior can be canceled.\nFor many events, such as the events represented by the Event class constants, this basic information is sufficient. Other events, however, may require more\ndetailed information.</p>",
+            "params": [
+                {
+                    "name": "type",
+                    "description": "The type of event. The type is case-sensitive.",
+                    "type": "String"
+                },
+                {
+                    "name": "bubbles",
+                    "description": "Indicates whether an event is a bubbling event. If the event can bubble, this value is true; otherwise it is false.\nNote: Bubbling will only work with DisplayObject classes throw the display list hierarchy. Any classes that do not have a parent cannot bubble.",
+                    "type": "Boolean",
+                    "optional": true,
+                    "optdefault": "false"
+                },
+                {
+                    "name": "cancelable",
+                    "description": "Indicates whether the behavior associated with the event can be prevented. If the behavior can be canceled, this value is true; otherwise it is false.",
+                    "type": "Boolean",
+                    "optional": true,
+                    "optdefault": "false"
+                },
+                {
+                    "name": "data",
+                    "description": "",
+                    "type": "Object",
+                    "optional": true,
+                    "optdefault": "null"
+                }
+            ],
+            "requires": [
+                "ICore"
+            ],
+            "is_constructor": 1
+        },
+        "EventDispatcher": {
+            "name": "EventDispatcher",
+            "shortname": "EventDispatcher",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "..\\dev\\scripts\\events\\EventDispatcher.ts",
+            "line": 3,
+            "description": "The EventDispatcher class is the base class for all classes that dispatch events and is the base class for the DisplayObject class.\nThe EventDispatcher class allows any object on the display list to be an event target.\nThe EventDispatcher provides methods for managing prioritized queues of event listeners and dispatching events.\n{{#crossLink \"DisplayObject\"}}{{/crossLink}} classes dispatch events.",
+            "is_constructor": 1
+        }
+    },
+    "classitems": [
+        {
+            "file": "..\\dev\\scripts\\display\\DisplayObject.ts",
+            "line": 12,
+            "copy": "EventDispatcher.CLASS_NAME",
+            "class": "DisplayObject"
+        },
+        {
+            "file": "..\\dev\\scripts\\display\\DisplayObject.ts",
+            "line": 17,
+            "description": "The isEnabled property is used to keep track of the enabled start of the DisplayObject.",
+            "itemtype": "property",
+            "name": "isEnabled",
+            "type": "{boolean}",
+            "default": "false",
+            "access": "protected",
+            "tagname": "",
+            "class": "DisplayObject"
+        },
+        {
+            "file": "..\\dev\\scripts\\display\\DisplayObject.ts",
+            "line": 27,
+            "description": "The isCreated property is used to keep track if it is the first time this DisplayObject is created.",
+            "itemtype": "property",
+            "name": "isCreated",
+            "type": "{boolean}",
+            "default": "false",
+            "access": "protected",
+            "tagname": "",
+            "class": "DisplayObject"
+        },
+        {
+            "file": "..\\dev\\scripts\\display\\DisplayObject.ts",
+            "line": 37,
+            "description": "Returns the number of children of this object.",
+            "itemtype": "property",
+            "name": "numChildren",
+            "type": "{init}",
+            "default": "0",
+            "readonly": "",
+            "class": "DisplayObject"
+        },
+        {
+            "file": "..\\dev\\scripts\\display\\DisplayObject.ts",
+            "line": 47,
+            "description": "A reference to the child DisplayObject instances to this parent object instance.",
+            "itemtype": "property",
+            "name": "children",
+            "type": "{array}",
+            "readonly": "",
+            "class": "DisplayObject"
+        },
+        {
+            "file": "..\\dev\\scripts\\display\\DisplayObject.ts",
+            "line": 61,
+            "description": "The createChildren function is intended to provide a consistent place for the creation and adding\nof children to the view. It will automatically be called the first time that the view is added\nto another DisplayObject. It is critical that all subclasses call the super for this function in\ntheir overridden methods.",
+            "itemtype": "method",
+            "name": "createChildren",
+            "override": "",
+            "access": "public",
+            "tagname": "",
+            "class": "DisplayObject"
+        },
+        {
+            "file": "..\\dev\\scripts\\display\\DisplayObject.ts",
+            "line": 76,
+            "description": "Adds a child DisplayObject instance to this parent object instance. The child is added to the front (top) of all other\nchildren in this parent object instance. (To add a child to a specific index position, use the addChildAt() method.)\n\nIf you add a child object that already has a different parent, the object is removed from the child\nlist of the other parent object.",
+            "itemtype": "method",
+            "name": "addChild",
+            "params": [
+                {
+                    "name": "child",
+                    "description": "The DisplayObject instance to add as a child of this DisplayObjectContainer instance.",
+                    "type": "DisplayObject"
+                }
+            ],
+            "return": {
+                "description": "The DisplayObject instance that you pass in the child parameter.",
+                "type": "DisplayObject"
+            },
+            "class": "DisplayObject"
+        },
+        {
+            "file": "..\\dev\\scripts\\display\\DisplayObject.ts",
+            "line": 92,
+            "description": "Removes the specified child object instance from the child list of the parent object instance.\nThe parent property of the removed child is set to null , and the object is garbage collected if no other references\nto the child exist. The index positions of any objects above the child in the parent object are decreased by 1.",
+            "itemtype": "method",
+            "name": "removeChild",
+            "params": [
+                {
+                    "name": "child",
+                    "description": "The DisplayObject instance to remove.",
+                    "type": "DisplayObject"
+                }
+            ],
+            "return": {
+                "description": "The DisplayObject instance that you pass in the child parameter.",
+                "type": "DisplayObject"
+            },
+            "access": "public",
+            "tagname": "",
+            "class": "DisplayObject"
+        },
+        {
+            "file": "..\\dev\\scripts\\display\\DisplayObject.ts",
+            "line": 107,
+            "description": "Removes all child DisplayObject instances from the child list of the DisplayObjectContainer instance.\nThe parent property of the removed children is set to null , and the objects are garbage collected if\nno other references to the children exist.",
+            "itemtype": "method",
+            "name": "removeChildren",
+            "return": {
+                "description": "",
+                "type": "DisplayObject"
+            },
+            "class": "DisplayObject"
+        },
+        {
+            "file": "..\\dev\\scripts\\display\\DisplayObject.ts",
+            "line": 120,
+            "description": "Adds a child DisplayObject instance to this DisplayObjectContainer instance.\nThe child is added at the index position specified. An index of 0 represents the back\n(bottom) of the display list for this DisplayObjectContainer object.",
+            "itemtype": "method",
+            "name": "addChildAt",
+            "params": [
+                {
+                    "name": "child",
+                    "description": "The DisplayObject instance to add as a child of this object instance.",
+                    "type": "DisplayObject"
+                },
+                {
+                    "name": "index",
+                    "description": "The index position to which the child is added. If you specify a currently occupied index position, the child object that exists at that position and all higher positions are moved up one position in the child list.",
+                    "type": "Int"
+                }
+            ],
+            "return": {
+                "description": "The DisplayObject instance that you pass in the child parameter.",
+                "type": "DisplayObject"
+            },
+            "class": "DisplayObject"
+        },
+        {
+            "file": "..\\dev\\scripts\\display\\DisplayObject.ts",
+            "line": 135,
+            "description": "Returns the child display object instance that exists at the specified index.",
+            "params": [
+                {
+                    "name": "index",
+                    "description": "The index position of the child object.",
+                    "type": "Int"
+                }
+            ],
+            "return": {
+                "description": "The child display object at the specified index position.",
+                "type": "DisplayObject"
+            },
+            "class": "DisplayObject"
+        },
+        {
+            "file": "..\\dev\\scripts\\display\\DisplayObject.ts",
+            "line": 146,
+            "description": "The enable method is responsible for enabling all event listeners and enabling children of the view.",
+            "itemtype": "method",
+            "name": "enable",
+            "access": "public",
+            "tagname": "",
+            "class": "DisplayObject"
+        },
+        {
+            "file": "..\\dev\\scripts\\display\\DisplayObject.ts",
+            "line": 157,
+            "description": "The disable method is responsible for disabling all event listeners and disabling children of the view.",
+            "itemtype": "method",
+            "name": "disable",
+            "access": "public",
+            "tagname": "",
+            "class": "DisplayObject"
+        },
+        {
+            "file": "..\\dev\\scripts\\display\\DisplayObject.ts",
+            "line": 168,
+            "description": "The layoutComponent method provides a common function to handle updating child objects.",
+            "itemtype": "method",
+            "name": "layoutChildren",
+            "class": "DisplayObject"
+        },
+        {
+            "file": "..\\dev\\scripts\\display\\DisplayObject.ts",
+            "line": 178,
+            "description": "The purpose of the destroy method is to make an object ready for garbage collection. This\nshould be thought of as a one way function. Once destroy is called no further methods should be\ncalled on the object or properties accessed. It is the responsibility of those who implement this\nfunction to stop all running Timers, all running Sounds, remove any event\nlisteners and take any other steps necessary to make an object eligible for garbage collection.\nIt is critical that all subclasses call the super for this function in their overridden methods.",
+            "itemtype": "method",
+            "name": "destroy",
+            "class": "DisplayObject"
+        },
+        {
+            "file": "..\\dev\\scripts\\events\\BaseEvent.ts",
+            "line": 21,
+            "description": "The actually class name for the object.",
+            "itemtype": "property",
+            "name": "CLASS_NAME",
+            "type": "{string}",
+            "final": 1,
+            "access": "protected",
+            "tagname": "",
+            "class": "BaseEvent"
+        },
+        {
+            "file": "..\\dev\\scripts\\events\\BaseEvent.ts",
+            "line": 31,
+            "description": "The BaseEvent.ACTIVATE constant defines the value of the type property of an activate event object.",
+            "itemtype": "event",
+            "name": "BaseEvent.activate",
+            "type": "{string}",
+            "static": 1,
+            "class": "BaseEvent"
+        },
+        {
+            "file": "..\\dev\\scripts\\events\\BaseEvent.ts",
+            "line": 40,
+            "description": "The BaseEvent.ADDED constant defines the value of the type property of an added event object.",
+            "itemtype": "event",
+            "name": "BaseEvent.added",
+            "type": "{string}",
+            "static": 1,
+            "class": "BaseEvent"
+        },
+        {
+            "file": "..\\dev\\scripts\\events\\BaseEvent.ts",
+            "line": 49,
+            "description": "The BaseEvent.ADDED_TO_STAGE constant defines the value of the type property of an addedToStage event object.",
+            "itemtype": "event",
+            "name": "BaseEvent.addedToStage",
+            "type": "{string}",
+            "static": 1,
+            "class": "BaseEvent"
+        },
+        {
+            "file": "..\\dev\\scripts\\events\\BaseEvent.ts",
+            "line": 58,
+            "description": "The BaseEvent.CANCEL constant defines the value of the type property of a cancel event object.",
+            "itemtype": "event",
+            "name": "BaseEvent.cancel",
+            "type": "{string}",
+            "static": 1,
+            "class": "BaseEvent"
+        },
+        {
+            "file": "..\\dev\\scripts\\events\\BaseEvent.ts",
+            "line": 67,
+            "description": "The BaseEvent.CHANGE constant defines the value of the type property of a change event object.",
+            "itemtype": "event",
+            "name": "BaseEvent.change",
+            "type": "{string}",
+            "static": 1,
+            "class": "BaseEvent"
+        },
+        {
+            "file": "..\\dev\\scripts\\events\\BaseEvent.ts",
+            "line": 76,
+            "description": "The BaseEvent.CLEAR constant defines the value of the type property of a clear event object.",
+            "itemtype": "event",
+            "name": "BaseEvent.clear",
+            "type": "{string}",
+            "static": 1,
+            "class": "BaseEvent"
+        },
+        {
+            "file": "..\\dev\\scripts\\events\\BaseEvent.ts",
+            "line": 85,
+            "description": "The BaseEvent.CLOSE constant defines the value of the type property of a close event object.",
+            "itemtype": "event",
+            "name": "BaseEvent.close",
+            "type": "{string}",
+            "static": 1,
+            "class": "BaseEvent"
+        },
+        {
+            "file": "..\\dev\\scripts\\events\\BaseEvent.ts",
+            "line": 94,
+            "description": "The BaseEvent.CLOSING constant defines the value of the type property of a closing event object.",
+            "itemtype": "event",
+            "name": "BaseEvent.closing",
+            "type": "{string}",
+            "static": 1,
+            "class": "BaseEvent"
+        },
+        {
+            "file": "..\\dev\\scripts\\events\\BaseEvent.ts",
+            "line": 103,
+            "description": "The BaseEvent.COMPLETE constant defines the value of the type property of a complete event object.",
+            "itemtype": "event",
+            "name": "BaseEvent.complete",
+            "type": "{string}",
+            "static": 1,
+            "class": "BaseEvent"
+        },
+        {
+            "file": "..\\dev\\scripts\\events\\BaseEvent.ts",
+            "line": 112,
+            "description": "The BaseEvent.CONNECT constant defines the value of the type property of a connect event object.",
+            "itemtype": "event",
+            "name": "BaseEvent.connect",
+            "type": "{string}",
+            "static": 1,
+            "class": "BaseEvent"
+        },
+        {
+            "file": "..\\dev\\scripts\\events\\BaseEvent.ts",
+            "line": 121,
+            "description": "Defines the value of the type property of a copy event object.",
+            "itemtype": "event",
+            "name": "BaseEvent.copy",
+            "type": "{string}",
+            "static": 1,
+            "class": "BaseEvent"
+        },
+        {
+            "file": "..\\dev\\scripts\\events\\BaseEvent.ts",
+            "line": 130,
+            "description": "Defines the value of the type property of a cut event object.",
+            "itemtype": "event",
+            "name": "BaseEvent.cut",
+            "type": "{string}",
+            "static": 1,
+            "class": "BaseEvent"
+        },
+        {
+            "file": "..\\dev\\scripts\\events\\BaseEvent.ts",
+            "line": 139,
+            "description": "The BaseEvent.DEACTIVATE constant defines the value of the type property of a deactivate event object.",
+            "itemtype": "event",
+            "name": "BaseEvent.deactivate",
+            "type": "{string}",
+            "static": 1,
+            "class": "BaseEvent"
+        },
+        {
+            "file": "..\\dev\\scripts\\events\\BaseEvent.ts",
+            "line": 148,
+            "description": "The BaseEvent.DISPLAYING constant defines the value of the type property of a displaying event object.",
+            "itemtype": "event",
+            "name": "BaseEvent.displaying",
+            "type": "{string}",
+            "static": 1,
+            "class": "BaseEvent"
+        },
+        {
+            "file": "..\\dev\\scripts\\events\\BaseEvent.ts",
+            "line": 157,
+            "description": "The BaseEvent.ENTER_FRAME constant defines the value of the type property of an enterFrame event object.",
+            "itemtype": "event",
+            "name": "BaseEvent.enterFrame",
+            "type": "{string}",
+            "static": 1,
+            "class": "BaseEvent"
+        },
+        {
+            "file": "..\\dev\\scripts\\events\\BaseEvent.ts",
+            "line": 166,
+            "description": "The BaseEvent.EXIT_FRAME constant defines the value of the type property of an exitFrame event object.",
+            "itemtype": "event",
+            "name": "BaseEvent.exitFrame",
+            "type": "{string}",
+            "static": 1,
+            "class": "BaseEvent"
+        },
+        {
+            "file": "..\\dev\\scripts\\events\\BaseEvent.ts",
+            "line": 175,
+            "description": "The BaseEvent.EXITING constant defines the value of the type property of an exiting event object.",
+            "itemtype": "event",
+            "name": "BaseEvent.exiting",
+            "type": "{string}",
+            "static": 1,
+            "class": "BaseEvent"
+        },
+        {
+            "file": "..\\dev\\scripts\\events\\BaseEvent.ts",
+            "line": 184,
+            "description": "The BaseEvent.FULL_SCREEN constant defines the value of the type property of a fullScreen event object.",
+            "itemtype": "event",
+            "name": "BaseEvent.fullScreen",
+            "type": "{string}",
+            "static": 1,
+            "class": "BaseEvent"
+        },
+        {
+            "file": "..\\dev\\scripts\\events\\BaseEvent.ts",
+            "line": 193,
+            "description": "The BaseEvent.INIT constant defines the value of the type property of an init event object.",
+            "itemtype": "event",
+            "name": "BaseEvent.init",
+            "type": "{string}",
+            "static": 1,
+            "class": "BaseEvent"
+        },
+        {
+            "file": "..\\dev\\scripts\\events\\BaseEvent.ts",
+            "line": 202,
+            "description": "The BaseEvent.NETWORK_CHANGE constant defines the value of the type property of a networkChange event object.",
+            "itemtype": "event",
+            "name": "BaseEvent.networkChange",
+            "type": "{string}",
+            "static": 1,
+            "class": "BaseEvent"
+        },
+        {
+            "file": "..\\dev\\scripts\\events\\BaseEvent.ts",
+            "line": 211,
+            "description": "The BaseEvent.OPEN constant defines the value of the type property of an open event object.",
+            "itemtype": "event",
+            "name": "BaseEvent.open",
+            "type": "{string}",
+            "static": 1,
+            "class": "BaseEvent"
+        },
+        {
+            "file": "..\\dev\\scripts\\events\\BaseEvent.ts",
+            "line": 220,
+            "description": "The BaseEvent.PASTE constant defines the value of the type property of a paste event object.",
+            "itemtype": "event",
+            "name": "BaseEvent.paste",
+            "type": "{string}",
+            "static": 1,
+            "class": "BaseEvent"
+        },
+        {
+            "file": "..\\dev\\scripts\\events\\BaseEvent.ts",
+            "line": 229,
+            "description": "The BaseEvent.PREPARING constant defines the value of the type property of a preparing event object.",
+            "itemtype": "event",
+            "name": "BaseEvent.preparing",
+            "type": "{string}",
+            "static": 1,
+            "class": "BaseEvent"
+        },
+        {
+            "file": "..\\dev\\scripts\\events\\BaseEvent.ts",
+            "line": 238,
+            "description": "The BaseEvent.REMOVED constant defines the value of the type property of a removed event object.",
+            "itemtype": "event",
+            "name": "BaseEvent.removed",
+            "type": "{string}",
+            "static": 1,
+            "class": "BaseEvent"
+        },
+        {
+            "file": "..\\dev\\scripts\\events\\BaseEvent.ts",
+            "line": 247,
+            "description": "The BaseEvent.RENDER constant defines the value of the type property of a render event object.",
+            "itemtype": "event",
+            "name": "BaseEvent.render",
+            "type": "{string}",
+            "static": 1,
+            "class": "BaseEvent"
+        },
+        {
+            "file": "..\\dev\\scripts\\events\\BaseEvent.ts",
+            "line": 256,
+            "description": "The BaseEvent.RESIZE constant defines the value of the type property of a resize event object.",
+            "itemtype": "event",
+            "name": "BaseEvent.resize",
+            "type": "{string}",
+            "static": 1,
+            "class": "BaseEvent"
+        },
+        {
+            "file": "..\\dev\\scripts\\events\\BaseEvent.ts",
+            "line": 265,
+            "description": "The type of event.",
+            "itemtype": "property",
+            "name": "type",
+            "type": "{string}",
+            "default": "null",
+            "readonly": "",
+            "class": "BaseEvent"
+        },
+        {
+            "file": "..\\dev\\scripts\\events\\BaseEvent.ts",
+            "line": 275,
+            "description": "The event target.",
+            "itemtype": "property",
+            "name": "target",
+            "type": "{*}",
+            "default": "null",
+            "readonly": "",
+            "class": "BaseEvent"
+        },
+        {
+            "file": "..\\dev\\scripts\\events\\BaseEvent.ts",
+            "line": 285,
+            "itemtype": "property",
+            "name": "data",
+            "type": "{*}",
+            "default": "null",
+            "readonly": "",
+            "class": "BaseEvent"
+        },
+        {
+            "file": "..\\dev\\scripts\\events\\BaseEvent.ts",
+            "line": 294,
+            "description": "Indicates whether an event is a bubbling event.",
+            "itemtype": "property",
+            "name": "bubble",
+            "type": "{boolean}",
+            "default": "false",
+            "readonly": "",
+            "class": "BaseEvent"
+        },
+        {
+            "file": "..\\dev\\scripts\\events\\BaseEvent.ts",
+            "line": 304,
+            "description": "Indicates whether the behavior associated with the event can be prevented.",
+            "itemtype": "property",
+            "name": "cancelable",
+            "type": "{boolean}",
+            "default": "false",
+            "readonly": "",
+            "class": "BaseEvent"
+        },
+        {
+            "file": "..\\dev\\scripts\\events\\BaseEvent.ts",
+            "line": 314,
+            "itemtype": "property",
+            "name": "isPropagationStopped",
+            "type": "{boolean}",
+            "default": "false",
+            "readonly": "",
+            "class": "BaseEvent"
+        },
+        {
+            "file": "..\\dev\\scripts\\events\\BaseEvent.ts",
+            "line": 323,
+            "itemtype": "property",
+            "name": "isImmediatePropagationStopped",
+            "type": "{boolean}",
+            "default": "false",
+            "readonly": "",
+            "class": "BaseEvent"
+        },
+        {
+            "file": "..\\dev\\scripts\\events\\BaseEvent.ts",
+            "line": 341,
+            "description": "Prevents processing of any event listeners in nodes subsequent to the current node in the event flow.\nThis method does not affect any event listeners in the current node (currentTarget). In contrast, the stopImmediatePropagation()\nmethod prevents processing of event listeners in both the current node and subsequent nodes. Additional calls to this method have no effect.\nThis method can be called in any phase of",
+            "itemtype": "method",
+            "name": "stopPropagation",
+            "class": "BaseEvent"
+        },
+        {
+            "file": "..\\dev\\scripts\\events\\BaseEvent.ts",
+            "line": 353,
+            "description": "Prevents processing of any event listeners in the current node and any subsequent nodes in the event flow.\nThis method takes effect immediately, and it affects event listeners in the current node. In contrast, the stopPropagation()\nmethod doesn't take effect until all the event listeners in the current node finish processing.",
+            "itemtype": "method",
+            "name": "stopImmediatePropagation",
+            "class": "BaseEvent"
+        },
+        {
+            "file": "..\\dev\\scripts\\events\\EventDispatcher.ts",
+            "line": 14,
+            "description": "The actually class name for the object.",
+            "itemtype": "property",
+            "name": "CLASS_NAME",
+            "type": "{string}",
+            "final": 1,
+            "access": "protected",
+            "tagname": "",
+            "class": "EventDispatcher"
+        },
+        {
+            "file": "..\\dev\\scripts\\events\\EventDispatcher.ts",
+            "line": 24,
+            "description": "Holds a reference to added listeners.",
+            "itemtype": "property",
+            "name": "_listeners",
+            "type": "{array}",
+            "access": "private",
+            "tagname": "",
+            "class": "EventDispatcher"
+        },
+        {
+            "file": "..\\dev\\scripts\\events\\EventDispatcher.ts",
+            "line": 33,
+            "description": "Indicates the object that contains child object. Use the parent property\nto specify a relative path to display objects that are above the current display object in the display\nlist hierarchy.",
+            "itemtype": "property",
+            "name": "parent",
+            "type": "{any}",
+            "class": "EventDispatcher"
+        },
+        {
+            "file": "..\\dev\\scripts\\events\\EventDispatcher.ts",
+            "line": 48,
+            "description": "Registers an event listener object with an EventDispatcher object so that the listener receives notification of an event.",
+            "itemtype": "method",
+            "name": "addEventListener",
+            "params": [
+                {
+                    "name": "type",
+                    "description": "The type of event.",
+                    "type": "String"
+                },
+                {
+                    "name": "callback",
+                    "description": "The listener function that processes the event. This function must accept an Event object as its only parameter and must return nothing, as this example shows. @example function(event:Event):void",
+                    "type": "Function"
+                },
+                {
+                    "name": "scope",
+                    "description": "Binds the scope to a particular object (scope is basically what \"this\" refers to in your function). This can be very useful in JavaScript because scope isn't generally maintained.",
+                    "type": "Any"
+                },
+                {
+                    "name": "priority",
+                    "description": "Influences the order in which the listeners are called. Listeners with lower priorities are called after ones with higher priorities.",
+                    "type": "Int",
+                    "optional": true,
+                    "optdefault": "0"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "*"
+            },
+            "example": [
+                "\n     instance.addEventListener(BaseEvent.CHANGE, handlerMethod, this);\n     private handlerMethod(event:BaseEvent):void {\n         console.log(event.target + \" sent the event.\");\n     }"
+            ],
+            "class": "EventDispatcher"
+        },
+        {
+            "file": "..\\dev\\scripts\\events\\EventDispatcher.ts",
+            "line": 68,
+            "description": "Removes a specified listener from the EventDispatcher object.",
+            "itemtype": "method",
+            "name": "removeEventListener",
+            "params": [
+                {
+                    "name": "type",
+                    "description": "The type of event.",
+                    "type": "String"
+                },
+                {
+                    "name": "callback",
+                    "description": "The listener object to remove.",
+                    "type": "Function"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "*"
+            },
+            "example": [
+                "\n     instance.removeEventListener(BaseEvent.CHANGE, handlerMethod);\n     private handlerMethod(event:BaseEvent):void {\n         console.log(event.target + \" sent the event.\");\n     }"
+            ],
+            "class": "EventDispatcher"
+        },
+        {
+            "file": "..\\dev\\scripts\\events\\EventDispatcher.ts",
+            "line": 86,
+            "description": "<p>Dispatches an event into the event flow. The event target is the EventDispatcher object upon which the dispatchEvent() method is called.</p>",
+            "itemtype": "method",
+            "name": "dispatchEvent",
+            "params": [
+                {
+                    "name": "event",
+                    "description": "The Event object that is dispatched into the event flow. You can create custom events, the only requirement is all events must\nextend the {{#crossLink \"BaseEvent\"}}{{/crossLink}}.",
+                    "type": "BaseEvent"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "*"
+            },
+            "example": [
+                "\n     var event:BaseEvent = new BaseEvent(BaseEvent.CHANGE);\n     instance.dispatchEvent(event);\n\n     // Here is a common inline event being dispatched\n     instance.dispatchEvent(new BaseEvent(BaseEvent.CHANGE));"
+            ],
+            "class": "EventDispatcher"
+        }
+    ],
+    "warnings": [
+        {
+            "message": "unknown tag: copy",
+            "line": " ..\\dev\\scripts\\display\\DisplayObject.ts:12"
+        },
+        {
+            "message": "unknown tag: override",
+            "line": " ..\\dev\\scripts\\display\\DisplayObject.ts:61"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " ..\\dev\\scripts\\display\\DisplayObject.ts:76"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " ..\\dev\\scripts\\display\\DisplayObject.ts:92"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " ..\\dev\\scripts\\display\\DisplayObject.ts:107"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " ..\\dev\\scripts\\display\\DisplayObject.ts:120"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " ..\\dev\\scripts\\display\\DisplayObject.ts:135"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " ..\\dev\\scripts\\events\\EventDispatcher.ts:48"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " ..\\dev\\scripts\\events\\EventDispatcher.ts:68"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " ..\\dev\\scripts\\events\\EventDispatcher.ts:86"
+        },
+        {
+            "message": "Missing item type",
+            "line": " ..\\dev\\scripts\\display\\DisplayObject.ts:12"
+        },
+        {
+            "message": "Missing item type\nReturns the child display object instance that exists at the specified index.",
+            "line": " ..\\dev\\scripts\\display\\DisplayObject.ts:135"
+        }
+    ]
+}
